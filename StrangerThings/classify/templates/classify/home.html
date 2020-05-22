@@ -1,0 +1,37 @@
+{% extends 'classify/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <h1>Welcome to StrangerFaceNet {{ user.username }}!</h1>
+    {% if confidence %}
+        <h5> Predicted: {{ person }} with confidence of {{ confidence }} % </h5>
+    {% endif %}
+    <!-- Edit -->
+    <div class="content-section">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Upload Your image here to Classify!</legend>
+                <div class="col-md-4 col-sm-4">
+                    <label>Upload Image File Here:</label>
+                    <input name="filePath" type="file">
+                </div>
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Classify!</button>
+            </div>
+        </form>
+        <p> This model is capable of classifying following characters from Netflix TV
+        show "Stranger Things"
+        </p>
+        <div class = 'col-md-4'>
+            <ul>
+                <li> <a href="https://www.github.com/cryptonon">Finn Wolfhard</a> </li>
+                <li> <a href="https://www.github.com/cryptonon">Gaten Matarazzo</a> </li>
+                <li> <a href="https://www.github.com/cryptonon">Millie Bobby Brown</a> </li>
+                <li> <a href="https://www.github.com/cryptonon">Natalia Dyer</a> </li>
+                <li> <a href="https://www.github.com/cryptonon">Noah Schnapp</a> </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Edit -->
+{% endblock content %}

@@ -1,0 +1,22 @@
+{% extends 'classify/base.html' %}
+{% block content %}
+    <h1>About Classify!</h1>
+    <div class="content-section">
+        <p> This is a simple Neural Network that makes use of convolution layers to predict 5 characters of Netflix Original TV Show Stranger Things.
+            This model is capable of predicting five classes/persons.
+            The model has been trained on 5024 images (~1005 images per class).
+            These 5024 images included the images of their appearance in Stranger Things as well as their real images.
+            Since the training images had (at least) two different distribution, model's accuracy (with about 1000 validation images) had accuracy of only 80%.
+            The trained classes are follows:
+        </p>
+        <div class = 'col-md-4'>
+            <ul>
+                <li> <a href="https://www.github.com/cryptonon">Finn Wolfhard</a> </li>
+                <li> <a href="https://www.github.com/cryptonon">Gaten Matarazzo</a> </li>
+                <li> <a href="https://www.github.com/cryptonon">Millie Bobby Brown</a> </li>
+                <li> <a href="https://www.github.com/cryptonon">Natalia Dyer</a> </li>
+                <li> <a href="https://www.github.com/cryptonon">Noah Schnapp</a> </li>
+            </ul>
+        </div>
+    </div>
+{% endblock content %}
